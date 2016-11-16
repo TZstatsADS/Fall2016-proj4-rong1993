@@ -1,16 +1,24 @@
 #source("http://bioconductor.org/biocLite.R")
 #biocLite("rhdf5")
 library(rhdf5)
+library(stringr)
 H5close()
+setwd("~/Desktop/Project4_data")
+load("lyr.RData")
 setwd("~/Desktop/Project4_data/data")
+Names = lyr[,1]
 Filenames = list.files(path = "~/Desktop/Project4_data/data",all.files = TRUE, recursive = TRUE )
+Features = list(0)
 
-for( i in 1:length(Filenames)){
-  
+
+for( i in 1:length(Names)){
+    index = grep(Names[i],Filenames)
+    Features[[i]]<-h5read(Filenames[index],"/analysis")
+    print(i)
 }
-sound1<-h5read("TRAAABD128F429CF47.h5", "/analysis")
-sound2<-h5read("TRAAAEF128F4273421.h5", "/analysis")
+
+save(Features,file= "All.Features.RData")
 
 
 
-install.packages("DescTools")
+
