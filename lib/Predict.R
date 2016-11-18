@@ -1,9 +1,12 @@
-load("doc.RData")
-load("lyr.RData")
-load("New.Features.RData")
-load("Topic.Modeling.RData")
-load("vocab.RData")
-source("Code/Main.R")
+#Use this file to predict!
+
+
+load("Data/doc.RData")
+load("Data/lyr.RData")
+load("Data/New.Features.RData")
+load("Data/Topic.Modeling.RData")
+load("Data/vocab.RData")
+source("lib/Main.R")
 Predict.Rank<-function(Train.Fea,Test,Topic.Modeling,vocab){#Test is a list with all features
   Topic.Dist = TP$Topic.Dist
   Words.Topic = TP$Words.Topic
