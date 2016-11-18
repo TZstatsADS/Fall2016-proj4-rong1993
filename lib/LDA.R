@@ -31,8 +31,8 @@ get.counts.matrix<-function(x){
 }
 
 doc <- lapply(word.list, get.counts.matrix)
-
-
+save(doc,file = "doc.RData")
+save(vocab,file = "vocab.RData")
 
 
 
@@ -54,7 +54,4 @@ Topic.Dist = t(fit$document_sums) #Topic Distribution
 for(i in 1:dim(Topic.Dist)[1]){
   Topic.Dist[i,] = Topic.Dist[i,]/sum(Topic.Dist[i,])
 }
-Words.Assign = fit$assignments
-
-
-
+Words.Assign = fit$topics

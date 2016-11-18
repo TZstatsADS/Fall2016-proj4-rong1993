@@ -25,8 +25,8 @@ which.min(Counts)
 
 
 #----For now just use n = 10---#
-
-n = 10
+load("frequency.RData")
+n = 5
 fit = kmeans(lyr,n)
 Data = data.frame(lyr,Group = fit$cluster)
 Label = fit$cluster
