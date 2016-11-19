@@ -6,7 +6,7 @@ library(tm)
 library(lda)
 library(LDAvis)
 lyr = lyr[,-1]
-lyr = lyr[,-c(2,3,6:30)]
+# lyr = lyr[,-c(2,3,6:30)]
 vocab = c(names(lyr),"ITSEND")
 word.list = NULL
 for(i in 1:dim(lyr)[1]){

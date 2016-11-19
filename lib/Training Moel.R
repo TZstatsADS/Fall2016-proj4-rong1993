@@ -4,7 +4,7 @@ load("vocab.RData")
 load("doc.RData")
 load("lyr.RData")
 lyr = lyr[,-1]
-lyr = lyr[,-c(2,3,6:30)]
+#lyr = lyr[,-c(2,3,6:30)]
 load("New.Features.RData")
 
 A = New.F[[1]]
